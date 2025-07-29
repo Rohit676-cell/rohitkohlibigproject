@@ -1,0 +1,336 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#left {
+    width: 75%;
+    height: 100vh;
+    float: left;
+}
+
+#right {
+    width: 25%;
+    height: 100vh;
+    float: right;
+}
+
+#video_player {
+    width: 100%;
+    height: auto;
+}
+
+#progress_box {
+    width: 100%;
+    height: 10px;
+    background-color: white;
+}
+
+#progress_bar {
+    width: 0%;
+    height: 10px;
+    background: -webkit-linear-gradient(to right, #E100FF, #7F00FF);
+    background: linear-gradient(to right, #E100FF, #7F00FF);
+}
+
+#control {
+    width: 100%;
+    height: 70px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+#play_btn {
+    font-size: 50px;
+    color: white;
+    cursor: pointer;
+}
+
+#left_btn,
+#right_btn {
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#play_tool {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#v_timing {
+    font-size: 20px;
+    font-family: sans-serif;
+    color: white;
+    margin-left: 20px;
+    float: left;
+}
+
+#volume,
+#expand,
+#speed_icon {
+    font-size: 26px;
+    color: white;
+    margin-right: 20px;
+
+}
+
+#timing,
+#play_tool,
+#other_tool {
+    width: 33.33%;
+
+}
+
+#other_tool {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#top {
+    width: 100%;
+    height: 17%;
+    background-color: #ddd;
+    padding: 15px;
+    position: relative;
+
+}
+
+#top h3 {
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 25px;
+
+}
+
+#search {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    font-family: sans-serif;
+    outline: none;
+    margin: 15px;
+}
+
+#open_video_btn {
+    font-size: 25px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+
+
+}
+
+#add_video_box {
+    width: 80%;
+    height: auto;
+    border-radius: 15px 0px 15px 15px;
+    background-color: #323232;
+    position: absolute;
+    top: 15px;
+    right: 40px;
+    padding: 20px;
+    display: none;
+
+}
+
+#add_video_box h2 {
+    font-family: sans-serif;
+    color: white;
+    margin-bottom: 15px;
+    text-align: center;
+
+}
+
+#video_name,
+#video_link {
+    width: 100%;
+    padding: 8px;
+    font-family: sans-serif;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+}
+
+#add_video_btn {
+    width: 70px;
+    background-color: white;
+    border: none;
+    outline: none;
+    padding: 8px;
+    font-family: sans-serif;
+}
+
+#bottom {
+    width: 100%;
+    padding: 20px;
+    height: 80%;
+    overflow: auto;
+
+}
+
+#main_video_box {
+    width: 100%;
+    background-color: white;
+    height: auto;
+    box-shadow: 0px 0px 6px #ccc;
+    margin-bottom: 10px;
+
+}
+
+#playlsi_video_name {
+    width: 100%;
+    padding: 10px;
+    font-family: sans-serif;
+    font-size: 18px;
+}
+
+#video_play_btn {
+    width: 50%;
+    border: none;
+    padding: 9px;
+    font-family: sans-serif;
+    cursor: pointer;
+    background-color: #4285f4;
+    color: white;
+
+}
+
+#video_delete_btn {
+    width: 50%;
+    border: none;
+    padding: 9px;
+    font-family: sans-serif;
+    cursor: pointer;
+    background-color: #ea4335;
+    color: white;
+
+}
+
+#volume_control,
+#speed_control {
+    appearance: none;
+    transform: rotate(270deg);
+    outline: none;
+    width: 100px;
+    height: 20px;
+    background-color: #f22b1d;
+    position: absolute;
+    top: -70px;
+    left: -35px
+}
+
+#volume_control::-webkit-slider-thumb {
+    appearance: none;
+    width: 15px;
+    height: 20px;
+    background-color: white;
+}
+
+#speed_control::-webkit-slider-thumb {
+    appearance: none;
+    width: 15px;
+    height: 20px;
+    background-color: white;
+}
+
+::-webkit-slider-thumb {
+    appearance: none;
+    width: 15px;
+    height: 20px;
+    background-color: white;
+}
+
+#vol_box,
+#speed_box {
+    width: fit-content;
+    position: relative;
+}
+
+
+
+
+/* -------------------- RESPONSIVE CSS -------------------- */
+
+@media screen and (max-width: 768px) {
+
+    #left,
+    #right {
+        width: 100%;
+        height: auto;
+        float: none;
+    }
+
+    #control {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+    }
+
+    #timing,
+    #play_tool,
+    #other_tool {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    #video_player {
+        height: auto;
+        max-height: 300px;
+    }
+
+    #top {
+        height: auto;
+    }
+
+    #bottom {
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #play_btn {
+        font-size: 40px;
+    }
+
+    #left_btn,
+    #right_btn {
+        font-size: 24px;
+    }
+
+    #v_timing {
+        font-size: 16px;
+    }
+
+    #volume,
+    #expand,
+    #speed_icon {
+        font-size: 20px;
+        margin-right: 10px;
+    }
+
+    #open_video_btn {
+        font-size: 20px;
+    }
+
+    #add_video_box {
+        width: 90%;
+        right: 5%;
+    }
+}
+
+#vol_box,
+#speed_box {
+    width: fit-content;
+    position: relative;
+}
